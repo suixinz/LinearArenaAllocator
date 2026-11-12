@@ -100,12 +100,12 @@ The project includes a comprehensive white-box and black-box test suite covering
 
 ```sh
 # Standard compilation (strict warnings)
-cc -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow arena.c arena_test.c -o arena_test
+cc -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow arena.c arena_test_ds.c -o arena_test_ds
 ./arena_test
 
 # Compile with AddressSanitizer and UndefinedBehaviorSanitizer (Highly Recommended)
-cc -std=c11 -g -fsanitize=address,undefined arena.c arena_test.c -o arena_test_asan
-./arena_test_asan
+cc -std=c11 -g -fsanitize=address,undefined arena.c arena_test_ds.c -o arena_test_ds_asan
+./arena_test_ds_asan
 ```
 
 ### Test File Structure (Excerpt)
