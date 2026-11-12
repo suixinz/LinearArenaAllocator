@@ -101,7 +101,7 @@ The project includes a comprehensive white-box and black-box test suite covering
 ```sh
 # Standard compilation (strict warnings)
 cc -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow arena.c arena_test_ds.c -o arena_test_ds
-./arena_test
+./arena_test_ds
 
 # Compile with AddressSanitizer and UndefinedBehaviorSanitizer (Highly Recommended)
 cc -std=c11 -g -fsanitize=address,undefined arena.c arena_test_ds.c -o arena_test_ds_asan
