@@ -151,7 +151,7 @@ static bool block_init(block* bk, size_t n){
  * @return true on success, false if the slot is already initialized, the
  *         array is full, or underlying allocation fails.
  */
-static bool arena_use_block_init(arena* arena_pool, size_t n){
+static bool arena_next_use_block_init(arena* arena_pool, size_t n){
 
     if(arena_pool == NULL || arena_pool->bk_first == NULL){
         return false;
@@ -312,8 +312,8 @@ static bool arena_grow(arena* arena_pool, size_t n){
         }
     }
 
-    return arena_use_block_init(arena_pool, n);
-    /* if arena_use_block_init(arena_pool, n) fails,
+    return arena_next_use_block_init(arena_pool, n);
+    /* if arena_next_use_block_init(arena_pool, n) fails,
     ** arena_blockarray_init/arena_blockarray_expand can't rollback!! 
     */
 }
